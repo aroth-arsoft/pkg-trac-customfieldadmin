@@ -1,4 +1,19 @@
 #!/usr/bin/make -f
 
+# Uncomment this to turn on verbose mode.
+export DH_VERBOSE=1
+export PYBUILD_NAME=trac-customfieldadmin
+export PYBUILD_DISABLE=test
+export PYBUILD_DIR=0.11
+
 %:
-	dh $@ --sourcedir=0.11 --with python2 --buildsystem=python_distutils
+	dh $@ --with python2 --buildsystem=pybuild
+
+override_dh_clean:
+	dh_clean
+	[ -d *.egg-info ] && rm -rf *.egg-info || true
+	-rm announcer/locale/*/LC_MESSAGES/announcer.mo
+
+override_dh_fixperms:
+	cp $(PYBUILD_DIR)/*.egg-info/SOURCES.txt $(shell readlink -f debian/$(PYBUILD_NAME)/usr/lib/python*/dist-packages/*.egg-info)/SOURCES.txt
+	dh_fixperms -O--buildsystem=pybuild

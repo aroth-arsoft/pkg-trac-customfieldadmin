@@ -1,0 +1,6 @@
+/trac-customfieldadmin/
+/debhelper-build-stamp
+/files
+*.substvars
+*.debhelper
+*.log
