@@ -1,0 +1,18 @@
+Source: trac-customfieldadmin
+Section: web
+Priority: optional
+Build-Depends: python-all (>= 2.6.6-3~), python-setuptools, debhelper (>= 7.0.50~), dh-python
+Maintainer: Python Applications Packaging Team <python-apps-team@lists.alioth.debian.org>
+Uploaders: W. Martin Borgert <debacle@debian.org>
+Standards-Version: 3.9.8
+Vcs-Browser: https://anonscm.debian.org/gitweb/?p=collab-maint/trac-customfieldadmin.git
+Vcs-Git: git://anonscm.debian.org/collab-maint/trac-customfieldadmin.git
+Homepage: http://trac-hacks.org/wiki/CustomFieldAdminPlugin
+
+Package: trac-customfieldadmin
+Architecture: all
+Depends: ${python:Depends}, ${misc:Depends}, trac
+Description: panel for administrating custom ticket fields in Trac
+ This Trac plugin is a web admin panel for administrating custom
+ fields - adding, modifying and deleting them without editing
+ the trac.ini file directly.

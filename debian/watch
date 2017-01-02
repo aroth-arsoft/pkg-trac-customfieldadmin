@@ -1,0 +1,6 @@
+version=3
+
+opts=downloadurlmangle=s/$/\/customfieldadminplugin\/0\.2\.6\?old_path=\/&format=zip/,uversionmangle=s/^/0.2.6+r/ \
+ http://trac-hacks.org/log/customfieldadminplugin/0.11 \
+ /changeset/(\d+) \
+ debian uupdate
