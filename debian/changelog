@@ -1,3 +1,9 @@
+trac-customfieldadmin (0.2.12+r16171-1~aroth2) yakkety; urgency=medium
+
+  * use different method to specify the source dir
+
+ -- Andreas Roth <aroth@arsoft-online.com>  Mon, 02 Jan 2017 18:33:59 +0100
+
 trac-customfieldadmin (0.2.12+r16171-1~aroth1) yakkety; urgency=medium
 
   * backport latest version
