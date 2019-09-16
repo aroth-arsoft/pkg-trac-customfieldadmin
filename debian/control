@@ -1,10 +1,11 @@
 Source: trac-customfieldadmin
 Section: web
 Priority: optional
-Build-Depends: python-all (>= 2.6.6-3~), python-setuptools, debhelper (>= 9), dh-python
+Standards-Version: 3.9.8
+Build-Depends: debhelper (>= 9), python (>= 2.7), dh-python, python-setuptools
+X-Python-Version: >=2.7
 Maintainer: Python Applications Packaging Team <python-apps-team@lists.alioth.debian.org>
 Uploaders: W. Martin Borgert <debacle@debian.org>
-Standards-Version: 3.9.8
 Vcs-Browser: https://anonscm.debian.org/gitweb/?p=collab-maint/trac-customfieldadmin.git
 Vcs-Git: git://anonscm.debian.org/collab-maint/trac-customfieldadmin.git
 Homepage: http://trac-hacks.org/wiki/CustomFieldAdminPlugin
