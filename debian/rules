@@ -6,12 +6,12 @@ export PYBUILD_NAME=trac-customfieldadmin
 export PYBUILD_DISABLE=test
 
 %:
-	dh $@  --sourcedirectory=$(SRC_DIR) --with python2 --buildsystem=pybuild
+	dh $@ --with python2 --buildsystem=pybuild
 
 override_dh_clean:
 	dh_clean
-	[ -d $(SRC_DIR)/*.egg-info ] && rm -rf $(SRC_DIR)/*.egg-info || true
+	[ -d *.egg-info ] && rm -rf *.egg-info || true
 
 override_dh_fixperms:
-	cp $(SRC_DIR)/*.egg-info/SOURCES.txt $(shell readlink -f debian/$(PYBUILD_NAME)/usr/lib/python*/dist-packages/*.egg-info)/SOURCES.txt
+	cp *.egg-info/SOURCES.txt $(shell readlink -f debian/$(PYBUILD_NAME)/usr/lib/python*/dist-packages/*.egg-info)/SOURCES.txt
 	dh_fixperms -O--buildsystem=pybuild
