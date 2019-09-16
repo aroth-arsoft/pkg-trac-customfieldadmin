@@ -95,6 +95,11 @@ class CustomFields(Component):
                     _("Custom field requires attributes 'name' and 'type'."))
         # Use lowercase custom fieldnames only
         cfield['name'] = cfield['name'].lower()
+        # Check field name is not reserved
+        tktsys = TicketSystem(self.env)
+        if cfield['name'] in tktsys.reserved_field_names:
+            raise TracError(_("Field name '%(name)s' is reserved",
+                              name=cfield['name']))
         # Only alphanumeric characters (and [-_]) allowed for custom fieldname
         if re.search('^[a-z][a-z0-9_]+$', cfield['name']) == None:
             raise TracError(_("Only alphanumeric characters allowed for " \
@@ -113,8 +118,8 @@ class CustomFields(Component):
         # (if modify it should already be deleted)
         if create and self.config.get('ticket-custom', cfield['name']):
             raise TracError(_("Can not create as field already exists."))
-        if create and [f for f in TicketSystem(self.env).fields
-                       if f['name'] == cfield['name']]:
+        if create and [f for f in tktsys.fields
+                         if f['name'] == cfield['name']]:
                 raise TracError(_("Can't create a custom field with the "
                                   "same name as a built-in field."))
 
