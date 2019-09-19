@@ -1,3 +1,10 @@
+trac-customfieldadmin (0.2.13+svn17507-3) disco; urgency=medium
+
+  * Automatic update 0.2.13 from https://trac-hacks.org/browser/custom
+    fieldadminplugin/0.11/?format=zip&rev=17507 revision 17507
+
+ -- Andreas Roth <aroth@arsoft-online.com>  Thu, 19 Sep 2019 07:01:01 +0200
+
 trac-customfieldadmin (0.2.13+svn17507-2) disco; urgency=medium
 
   * Automatic update 0.2.13 from https://trac-hacks.org/browser/custom
